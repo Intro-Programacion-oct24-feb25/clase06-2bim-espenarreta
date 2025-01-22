@@ -16,25 +16,38 @@ public class Ejemplo092 {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-
-        try {
-            System.out.println("Ingrese valor 1 a operar: ");
-            int valor1 = entrada.nextInt();
-            System.out.println("Ingrese valor 2 a operar: ");
-            int valor2 = entrada.nextInt();
-            if (valor1 < 0 || valor2 < 0){
-               throw new Exception("Número negativos");
+        boolean bandera = true;
+        
+        while (bandera) {
+            try {
+                System.out.println("Ingrese un pais que inicie con consonante ");
+                String valor1 = entrada.nextLine();
+                
+                valor1 = valor1.toUpperCase();
+                char letra = valor1.charAt(0);
+                String primeraLetra = (String.valueOf(letra));
+                        
+                if (primeraLetra.equals("A") || 
+                        primeraLetra.equals("E") || 
+                        primeraLetra.equals("I") || 
+                        primeraLetra.equals("O") || 
+                        primeraLetra.equals("U")) {
+                    throw new Exception("País debe iniciar con consonante");
+                }
+                String resultado = "";
+                resultado = String.format("%s%s\n", resultado, valor1);
+                System.out.printf("Resultado %s\n", resultado);
+                bandera = false;
+                
+            } catch (ArithmeticException e) {
+                System.out.printf("(ArithmeticException) Ocurrió una "
+                        + "excepción %s\n", e);
+            } catch (InputMismatchException e) {
+                System.out.printf("(InputMismatchException) Ocurrió una "
+                        + "excepción %s\n", e);
+            } catch (Exception e) {
+                System.out.printf("Ocurrió una excepción %s\n", e);
             }
-            int resultado = valor1 / valor2;
-            System.out.printf("Resultado %s\n", resultado);
-        } catch (ArithmeticException e) {
-            System.out.printf("(ArithmeticException) Ocurrió una "
-                    + "excepción %s\n", e);
-        } catch (InputMismatchException e) {
-            System.out.printf("(InputMismatchException) Ocurrió una "
-                    + "excepción %s\n", e);
-        } catch (Exception e) {
-            System.out.printf("Ocurrió una excepción %s\n", e);
         }
     }
 }
