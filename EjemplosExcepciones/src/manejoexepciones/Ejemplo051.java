@@ -27,7 +27,9 @@ public class Ejemplo051 {
                 int resultado = valor1 / valor2;
 
                 System.out.printf("Resultado %d\n", resultado);
-                bandera = false;
+                bandera = false; // La bandera se utiliza para que al momento
+                                 // de que el usuario ingrese bien los datos
+                                 // el ciclo termnine
             } catch (InputMismatchException inputMismatchException) {
 
                 System.out.printf("Existe un error de tipo %s\n",
