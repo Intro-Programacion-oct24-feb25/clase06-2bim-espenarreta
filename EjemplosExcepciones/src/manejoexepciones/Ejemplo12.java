@@ -46,11 +46,14 @@ public class Ejemplo12 {
             } catch (ArithmeticException e) {
                 System.out.printf("(ArithmeticException) Ocurrió una "
                         + "excepción %s\n", e);
+                entrada.nextLine();
             } catch (InputMismatchException e) {
                 System.out.printf("(InputMismatchException) Ocurrió una "
                         + "excepción %s\n", e);
+                entrada.nextLine();
             } catch (Exception e) {
                 System.out.printf("Ocurrió una excepción %s\n", e);
+                entrada.nextLine();
 
             }
             /*Realizar un proceso repetitivo que permita realizar la división de 
