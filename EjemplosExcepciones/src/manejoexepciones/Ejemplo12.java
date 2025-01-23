@@ -35,11 +35,12 @@ public class Ejemplo12 {
                     valor2 = entrada.nextInt();
                     
                     resultado = valor1 / valor2;
-                    resultado = resultados[i];
+                    resultados[i] = resultado;
                 }
-
+                
+                System.out.printf("Resultados:\n");
                 for (int i = 0; i < resultados.length; i++) {
-                    System.out.printf("%.2f ", resultados[i]);
+                    System.out.printf("%.2f\n", resultados[i]);
                 }
                 bandera = false;
 
