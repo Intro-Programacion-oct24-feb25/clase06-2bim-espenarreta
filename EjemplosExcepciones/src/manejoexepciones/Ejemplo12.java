@@ -2,6 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
+/*Realizar un proceso repetitivo que permita realizar la división de 
+        números ingresados por teclado; el resultado de cada división debe ir 
+        almacenandose en cada posición del arreglo. Considerar las excepciones
+        posibles*/
+
 package manejoexepciones;
 
 import java.util.InputMismatchException;
@@ -33,15 +39,11 @@ public class Ejemplo12 {
                     valor1 = entrada.nextInt();
                     System.out.println("Ingrese el valor 2 a dividir");
                     valor2 = entrada.nextInt();
-                    
+
                     resultado = valor1 / valor2;
                     resultados[i] = resultado;
                 }
                 
-                System.out.printf("Resultados:\n");
-                for (int i = 0; i < resultados.length; i++) {
-                    System.out.printf("%.2f\n", resultados[i]);
-                }
                 bandera = false;
 
             } catch (ArithmeticException e) {
@@ -57,10 +59,12 @@ public class Ejemplo12 {
                 entrada.nextLine();
 
             }
-            /*Realizar un proceso repetitivo que permita realizar la división de 
-        números ingresados por teclado; el resultado de cada división debe ir 
-        almacenandose en cada posición del arreglo. Considerar las excepciones
-        posibles*/
+            
+        }
+        
+        System.out.printf("\nResultados:\n");
+        for (int i = 0; i < resultados.length; i++) {
+            System.out.printf("%.2f\n", resultados[i]);
         }
     }
 }
